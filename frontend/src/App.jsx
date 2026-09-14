@@ -81,7 +81,7 @@ function App() {
         createExperiment(res.data);
       }
     } catch (err) {
-      setError(err.response?.data?.error || 'Failed to analyze question. Is backend running?');
+      setError(`Failed to reach backend at: ${API_BASE_URL}/analyze (Error: ${err.message})`);
       setStage(STAGES.ASK);
     } finally {
       setLoading(false);
@@ -101,7 +101,7 @@ function App() {
       const res = await axios.post(`${API_BASE_URL}/experiment`, data);
       setExperiment(res.data);
     } catch (err) {
-      setError('Failed to define experiment.');
+      setError(`Failed to reach backend at: ${API_BASE_URL}/analyze (Error: ${err.message})`);
       setStage(STAGES.ASK);
     } finally {
       setLoading(false);
