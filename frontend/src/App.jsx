@@ -7,7 +7,7 @@ import ExperimentCard from './components/ExperimentCard';
 import { TestResultsData, TestResultsAI } from './components/TestResults';
 import ExperimentHistory from './components/ExperimentHistory';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 const STAGES = {
   ASK: 'ASK',
